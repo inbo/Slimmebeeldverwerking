@@ -1,0 +1,16 @@
+# Folders
+/data
+
+# Files
+.env
+*.tif
+*.tiff
+*.jpg   
+*.jpeg
+*.png
+*.shp
+*.dbf
+*.prj
+*.sbn
+*.sbx
+*.shx
