@@ -5,6 +5,7 @@
 .env
 *.tif
 *.tiff
+*.tif.aux.xml
 *.jpg   
 *.jpeg
 *.png
@@ -14,3 +15,11 @@
 *.sbn
 *.sbx
 *.shx
+*.csv
+*.qgz
+*.pkl
+
+
+# Presentations
+*.gslides
+.Rproj.user
