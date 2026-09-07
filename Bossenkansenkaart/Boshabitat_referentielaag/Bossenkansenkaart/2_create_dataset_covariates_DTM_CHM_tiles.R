@@ -3,8 +3,9 @@ library(terra)
 library(tidyterra)
 
 ### Load the datasets ####
-base_dir <- "G:/Gedeelde drives/PRJ_SlimmeBeeldverwerking/PRJ_2026_SlimmeBeeldverwerking/Slimmebeeldverwerking/Bossenkansenkaart"
+base_dir <- "//Client/G$/Gedeelde drives/PRJ_SlimmeBeeldverwerking/PRJ_2026_SlimmeBeeldverwerking/Slimmebeeldverwerking/Bossenkansenkaart"
 
+base_dir <- "G:/Gedeelde drives/PRJ_SlimmeBeeldverwerking/PRJ_2026_SlimmeBeeldverwerking/Slimmebeeldverwerking/Bossenkansenkaart"
 
 
 boshab <- rast(file.path(base_dir, "Boshabitat_referentielaag/BWK_2025_bosraster.tif"))
@@ -17,6 +18,9 @@ block_grid <- vect(file.path(base_dir, "grids/50km_spatial_blok.gpkg"))
 
 
 ### Load Covariables ####
+dtm <- rast("//Client/S$/Vlaanderen/Hoogte/DHMVII/DHMVIIDTMRAS1m.tif")
+chm <- rast("//Client/S$/Vlaanderen/Hoogte/DHMVII/DHMVIInDSMRAS1m.tif")
+
 dtm <- rast("S:/Vlaanderen/Hoogte/DHMVII/DHMVIIDTMRAS1m.tif")
 chm <- rast("S:/Vlaanderen/Hoogte/DHMVII/DHMVIInDSMRAS1m.tif")
 
@@ -27,9 +31,9 @@ if (crs(boshab) != targetcrs) {
   boshab <- project(boshab,targetcrs)
 }
 
-if (crs(tile_grid) != targetcrs) {
-  tile_grid <- project(tile_grid,targetcrs)
-}
+#if (crs(tile_grid) != targetcrs) {
+#  tile_grid <- project(tile_grid,targetcrs)
+#}
 
 if (crs(block_grid) != targetcrs) {
   block_grid <- project(block_grid,targetcrs)
@@ -91,7 +95,7 @@ rm(dtm_crop_max)
 
 ### DTM - median ###
 
-for (i in 1:nrow(block_grid)) {
+for (i in 1:nrow(block_grid)) { 
   #i <- 1
   block_sel <- block_grid[i, ]
   block_buffer <- buffer(block_sel,50) # create a 50 meter buffer
@@ -230,7 +234,7 @@ rm(chm_crop_max)
 
 ### CHM - median ###
 
-for (i in 1:nrow(block_grid)) {
+for (i in 7:nrow(block_grid)) { # normally, it starts at 1.
   #i <- 1
   block_sel <- block_grid[i, ]
   block_buffer <- buffer(block_sel,50) # create a 50 meter buffer
@@ -317,3 +321,4 @@ for (i in 1:nrow(block_grid)) {
   
   
 }
+

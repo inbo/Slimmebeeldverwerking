@@ -18,6 +18,7 @@
 *.csv
 *.qgz
 *.pkl
+*.gpkg
 
 
 # Presentations
