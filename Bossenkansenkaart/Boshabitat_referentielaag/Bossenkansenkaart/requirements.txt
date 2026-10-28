@@ -1,0 +1,6 @@
+torch
+torchvision
+rasterio
+numpy
+matplotlib
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
