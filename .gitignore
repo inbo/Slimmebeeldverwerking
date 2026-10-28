@@ -19,7 +19,9 @@
 *.qgz
 *.pkl
 *.gpkg
-
+*.npz
+*.Rhistory
+*.RData
 
 # Presentations
 *.gslides

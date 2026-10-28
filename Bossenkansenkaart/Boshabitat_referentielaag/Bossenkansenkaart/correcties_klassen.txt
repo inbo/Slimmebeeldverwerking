@@ -1,0 +1,6 @@
+leeftijd_val -> leeftijd (unique values verzamelen) + 0 toevoegen voor NA
+
+drainage klassen --> 1
+
+bosmonitoring.boomsoort 1, 2 --> 0
+
